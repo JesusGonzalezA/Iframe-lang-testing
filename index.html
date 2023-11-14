@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Probando iframes y atributo lang</title>
+</head>
+<body>
+    <h1>Iframes y atributo lang</h1>
+    <p>En esta página hay cuatro iframes. El lenguaje de la página se ha configurado a 'inglés'.</p>
+    <p>Te darás cuenta que cuando navegas a un iframe sin atributo lang en su html, el sintetizador utilizado por el screen reader es incorrecto (la propiedad lang no se hereda).</p>
+    <p>Puedes probar a cambiar el lang del parent html para probarlo.</p>
+    <iframe src="./spanish.html" width="500px" height="500px" title="Spanish"></iframe>
+    <iframe src="./english.html" width="500px" height="500px" title="English"></iframe>
+    <iframe src="./no-lang-spanish.html" width="500px" height="500px" title="Spanish with no lang"></iframe>
+    <iframe src="./no-lang-english.html" width="500px" height="500px" title="English with no lang"></iframe>
+</body>
+</html>
