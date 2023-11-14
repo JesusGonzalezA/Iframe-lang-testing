@@ -9,9 +9,32 @@
     <p>En esta página hay cuatro iframes. El lenguaje de la página se ha configurado a 'inglés'.</p>
     <p>Te darás cuenta que cuando navegas a un iframe sin atributo lang en su html, el sintetizador utilizado por el screen reader es incorrecto (la propiedad lang no se hereda).</p>
     <p>Puedes probar a cambiar el lang del parent html para probarlo.</p>
+    <fieldset>
+        <legend>Idioma:</legend>
+        <div>
+          <input type="radio" id="spanish" name="idioma" value="spanish" checked />
+          <label for="spanish">Español</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="english" name="idioma" value="english" />
+          <label for="english">Inglés</label>
+        </div>
+    </fieldset>
     <iframe src="./spanish.html" width="500px" height="500px" title="Spanish"></iframe>
     <iframe src="./english.html" width="500px" height="500px" title="English"></iframe>
     <iframe src="./no-lang-spanish.html" width="500px" height="500px" title="Spanish with no lang"></iframe>
     <iframe src="./no-lang-english.html" width="500px" height="500px" title="English with no lang"></iframe>
 </body>
+<script>
+    const spanishInput = document.getElementById('spanish')
+    const englishInput = document.getElementById('english')
+
+    const setLang = (language) => document.documentElement.lang = language
+    const setSpanish = () => setLang("es")
+    const setEnglish = () => setLang("en")
+
+    spanishInput.onclick = spanishInput.onkeydown = setSpanish
+    englishInput.onclick = englishInput.onkeydown = setEnglish    
+</script>
 </html>
